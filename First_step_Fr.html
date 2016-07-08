@@ -1,0 +1,161 @@
+<div class="first-encrypted-email">
+  <p><strong>German version: <a href="https://gpgtools.tenderapp.com/kb/how-to/erste-schritte-wo-fange-ich-an">Erste Schritte</a></strong></p>
+
+  <p><strong>French version: <a href="https://gpgtools.tenderapp.com/kb/how-to/premiers-pas-ou-commencer">Florent Tatard</a></strong></p>
+
+  <p>Bienvenue ! Heureux de vous voir ici et merci pour votre intérêt. Dans cet article, vous allez apprendre à configurer votre propre clé GPG et envoyer votre premier courriel sécurisé.</p>
+
+  <h2 id="setup-GPG_Suite"><a name="setup-GPG_Suite" class="anchor" href="#setup-GPG_Suite" id="setup-GPG_Suite"></a> Configuration de la Suite GPG</h2>
+
+  <p>La première étape est de télécharger et exécuter <a href="https://gpgtools.org/#gpgsuite">Suite GPG</a>. Une fois terminé, il est temps de configurer votre clé GPG.</p>
+  <p>Si vous avez déjà une clé GPG, vous pouvez <a href="#adduid" class="skip-to-add-uid">ajouter votre adresse à une clé GPG existante</a>, car dans ce cas vous n'êtes pas obligé de créer une nouvelle clé. Si vous n'avez pas encore généré de clé GPG, poursuivez attentivement votre lecture.</p>
+
+  <h2><a name="newkey" class="anchor" href="#newkey" id="newkey"></a>Créer une nouvelle clé</h2>
+
+  <p>Le trousseau GPG est une application vous permettant de gérer vos clés. Elle vous permettra ainsi de créer des nouvelles clés, éditer des clés existantes ainsi que chercher les clés de vos correspondants. La première chose que vous verrez dans le trousseau GPG est un assistant qui vous guidera tout au long du processus de création de votre première clé.</p>
+
+  <p><img src="/help/assets/bfc64a1990b15f209b3ac92acd56dacc4d6d0a4f/gk_newkey_normal.jpg" alt="Create a new key"></p>
+  <h3>Adresse courriel</h3>
+  <p>Le trousseau GPG complète les données à partir du carnet de contacts OSX. Notez que ces champs sont éditables donc vous pouvez les changer à votre convenance. Entrez votre adresse courriel usuelle et assurez-vous qu'elle est saisie exactement comme dans l'application Mail (native de OSX) &gt; Préférences &gt; Comptes. Assurez-vous bien que les minuscules et majuscules sont respectées, car cela a son importance pour la suite. D'autres adresses courriel peuvent être ajoutées à votre clé plus tard</p>
+
+  <h3>Publiez votre clé après sa génération</h3>
+  <p>Si vous cochez cette case, votre clé public sera publiées sur un serveur de clés une fois le processus de création de clé terminé. C'est généralement une bonne chose, car cela facilitera le travail à vos correspondants cherchant à vous envoyer des courriels chiffrés en important simplement votre clé depuis le serveur. Cependant, <strong>une fois la clé publiée sur le serveur de clés, il est impossible de la retirer</strong>. Cela signifie: Vous ne pourrez plus changer le nom associé à la clé une fois celle-ci publiée sur le serveur. Si vous n'êtes pas sûr de vous, vous pouvez toujours publier votre clé plus tard.</p>
+
+  <h3>Phrase de passe</h3>
+  <p>Entez votre phrase de passe (un nom plus élaboré pour "mot de passe", impliquant une longueur plus importante). Comme tout autre mot de passe que vous utilisez, celui-ci doit être robuste. C'est pour cela que nous recommandons l'usage d'une phrase complète (que vous pouvez facilement mémoriser) comprenant des symboles et des chiffres.</p>
+
+  <p><strong style="color:red;">Important:</strong> En cas de perte de votre mot de passe, il n'y a aucun moyen de le récupérer ! Assurez-vous de l'avoir bien mémorisé et/ou conservé une copie en lieu sûr (et non, un simple fichier texte sur votre bureau n'est pas un endroit sûr !)</p>
+
+
+
+  <h3>Cliquez sur "Generate key"!</h3>
+  <p>Après un court instant, vous verrez apparaitre une nouvelle entrée dans le trousseau de clé GPG, avec votre adresse couriel indiquant <strong>sec/pub</strong> ("secret/publique") dans la colonne "type".</p>
+
+  <p><img src="/help/assets/36d5426bc9e64e22f5f37ff4fcdaebcf1c86696e/gk_newkey_result_normal.jpg"></p>
+
+
+  <p>Chaque fois que vous créez une nouvelle clé, une paire de clés est générée. Cette paire consiste en une clé privée et une clé publique. La clé publique doit être partagée publiquement. C'est elle qui permettra à vos correspondants de chiffrer les messages qui vous sont destinés.</p>
+
+  <p><font color="red"><b>Important:</b></font> si vous supprimez votre clé privée, vous ne serez plus en mesure de lire les message chiffrés.</p>
+  <div class="add-uid" style="display:none">
+    <h2><a name="adduid" id="adduid"></a> Ajouter votre adresse courriel usuelle à une clé GPG existante</h2>
+    <p>Pour envoyer un courriel chiffré avec Mail.app en utilisant GPGMail, vous devez ajouter l'adresse courriel utilisée dans Mail.app à votre clé GPG exisistante. Si vous êtes absoluement certain que votre adresse courriel configurée dans Mail.app est déjà associée à votre clé GPG, vous pouvez passer à l'étape suivante: <a href="#firstmail">créer votre premier courriel chiffré</a>. Dans le cas contraire, ajoutez votre adresse courriel comme USer-ID à la clé existante.</p>
+    <ul>
+      <li>1. Double-cliquez sur la clé générée dans le trousseau pour ajouter votre adresse courriel</li>
+      <li>2. La fenêtre "Key details" s'ouvre. Cliquez sur l'onglet "User IDs"</li>
+      <li>3. Cliquez sur "+" pour ajouter une autre adresse courriel comme identifiant utilisateur (User ID).</li>
+      <li>4. Une nouvelle fenêtre s'ouvre: Entez votre nom ainsi que votre adresse courriel. Nous vous recommandons de laisser le champs "Comment" vide</li>
+      <li>5. Cliquez sur "Generation User ID"</li>
+      <li>6. Saisissez votre phrase de passe</li>
+    </ul>
+
+    <p><img src="/help/assets/e170f7c2db9073e15cfa480239c65659e46fa6a2/gk_add_UserID_normal.jpg" alt="Add User ID" /></p>
+
+    <p>Répétez l'opération ci-dessus pour ajouter autant d'identifiants utilisateur que vous le souhaitez. Il est également recommandé de définir votre adresse courriel la plus fréquente comme profil utilisateur principal.</p>
+    <p>Pour se faire:</p>
+
+    <ul>
+      <li>Sélectionnez le profil que vous souhaitez définir comme primaire ("Primary")</li>
+      <li>Cliquez sur le rouage (à côté du "+")</li>
+      <li>Sélectionnez "Primary"</li>
+    </ul>
+
+    <p><strong style="color:red;">Important:</strong> Si votre clé est présente sur un serveur de clés GPG, n'oubliez pas de publier la nouvelle version via le menu "Key" &gt; "Send to keyserver" (<strong>&#8679;&#8984;K</strong>). Dans le cas contraire, le changement sera uniquement local et vos contacts ne pourront pas bénéficier de votre nouveau profil.</p>
+  </div>
+
+  <h2><a name="firstmail" class="anchor" id="firstmail" href="#firstmail"></a>Votre premier courriel chiffré</h2>
+
+  <p>Cool, vous y êtes presque ! Tout ce dont vous avez besoin pour ce premier essai est un couple de clé "privé/publique" dans votre trousseau de clés GPG correspondant exactement à la ou les adresses email paramétrées dans votre application Mail.app. Si vous souhaitez chiffrer vos messages à d'autres destinataires que vous-même, vous devez récupérer leurs clé publique en premier lieu.</p>
+  <p>Ouvrez Mail.app et créez un nouveau message. Vous remarquerez deux nouveau boutons dans votre fenêtre de saisie.</p>
+
+  <p><img src="/help/assets/0b0b412bebf128eabee5152ca60e89324cd0179c/gm1_enc-inactive_sig-disabled_normal.jpg"></p>
+
+  <p>Une <strong>icône de verrou</strong> pour le chiffrement et une <strong>icône d'étoile</strong> pour la signature électronique. Pour ces deux icônes, le code couleur est le suivant:</p>
+
+  <ul>
+    <li>Grisé: Désactivé</li>
+    <li>Noir: Prêt</li>
+    <li>Coloré: Activé</li>
+  </ul>
+
+  <p>Si vous venez juste de créer votre clé, l'icône de signature (l'étoile) devrait être en noir, indiquant que l'application est prête à signer le message. En cliquant dessus, celui-ci passe à l'état activé, indiquant que le message a été <strong>signé</strong>.</p>
+
+  <p><img src="/help/assets/1769dbd4dc54f6650cdd2a44ab8f66df588e4b4a/gm2_enc-inactive_sig-enabled_normal.jpg" /></p>
+
+
+  <p>L'icône de verrou cependant apparait toujours grisé car vous devez dabord saisir l'adresse email d'un destinataire, de qui vous possédez la clé publique.</p>
+
+  <p><i>Dans le cadre d'un test, vous pouvez saisir votre propre adresse courriel en destinataire (champ "To:"). Ensuite l'icône de verrou devrait apparaitre en noir.</i></p>
+
+  <p><img src="/help/assets/1e1018bbed13790839baabe653f70eb80230352c/gm3_enc-disabled_sig-enabled_normal.jpg" /></p>
+
+  <p>Vous êtes désormais prêt à <strong>chiffrer</strong> votre message. Cliquez sur l'icône pour effectuer le chiffrement du courriel. Si tout se passe bien, l'icône devrait être coloré.</p>
+
+  <p><img src="/help/assets/cf91a5ee7754fa30f37bc5995be4a882b0c3db09/gm4_enc-enabled_sig-enabled_normal.jpg" /></p>
+
+
+  <p>Après avoir cliqué sur l'icône de verrou ou d'étoile, l'indicateur OpenPGP situé dans le coin supérieur droit de la fenêtre s'affiche en vert. Ceci indique que votre courriel est chiffré et/ou signé.</p>
+
+  <p><img src="/help/assets/a4bf46144d5650900dfd73a7ceddaa150e8a4da2/GPGM_OpenPGP_ind_active_normal.png" /></p>
+
+  <p>Votre fenêtre de saisie devrait ressembler à ça: L'indicateur OpenPGP est en vert, l'icône de verrou est fermé (message chiffré) et l'icône d'étoile est coché (message signé).</p>
+
+  <p><img src="/help/assets/0137c1c73385356e9ad8870a7ea64a6bdc76977f/First_mail_send_normal.jpg" /></p>
+
+  <p>Envoyez le courriel. Si votre phrase de passe n'est pas stockée sur votre ordinateur, il vous sera demandé de la saisir manuellement avant que le courriel soit effectivement envoyé. Peu de temps après, le message envoyé devrait arriver dans votre boite de réception. Vous verrez que le message est signé et chiffré: Le verrou est fermé et l'icône de signature apparait à côté de l'adresse de l'émetteur (vous-même).</p>
+
+  <p>Puisque vous êtes capable de lire le contenu du message, cela signifie que celui-ci a correctement été déchiffré.</p>
+  <p>Si vous ne voyez pas l'icône de verrou, cela signifie que le message n'a pas pété chiffré avant l'envoi.</p>
+
+  <p>Mail.app &gt; Préférences &gt; GPGMail permet <b>d'ajuster les paramètres par défaut</b> de chiffrement et de signature à appliquer aux nouveaux message.</p>
+  <p><img src="/help/assets/794f1cde97414066e3d76ce11bfa2a47f49ce980/First_mail_receive_normal.jpg"></p>
+
+  <p>Félicitation, vous avez réussi !</p>
+
+  <p>Pour être tout à fait honnête, nous devons admettre avoir triché quelque peu. Chiffrer un message peut demander quelques efforts supplémentaires car cela nécessite d'ajouter la clé publique de chacun de vos destinataires avant de leurs adresser un message. Cependant, notez que l'ajout de la clé publique ne se fait qu'une seule fois.</p>
+
+  <p><a href="#getpublickey" class="skip-to-find-pubkey">Comment obtenir la clé publique de vos contacts</a></p>
+
+  <div class="get-publickey" style="display:none">
+    <h2><a name="getpublickey" class="anchor" href="#getpublickey" id="getpublickey"></a>Comment obtenir la clé publique de vos contacts</h2>
+
+    <p>Si vous contacts ne possèdent pas de paire de clés, ls doivent en créer une. S'il n'utilisez pas OSX, nous leurs recommandons <a href="http://www.gpg4win.org/">Gpg4win</a> (windows) ou <a href="http://www.gnupg.org/related_software/gpa/index.en.html">GPA</a> (Linux). Après avoir créé leur paire de clé, invitez-les à publiquer leur clé sur un serveur de clés GPG ou à vous la communiquer par tout autre moyen. De plus, il doivent utiliser un client mail comportant un module complémentaire (plug-in) OpenPGP - comparable à Mail.app avec le module GPGMail.</p>
+
+    <ul>
+      <li>Ouvrez le trousseau de clé GPG</li>
+      <li>Entrez la commande &#8984; + F et saisissez l'adresse email ou le nom de votre contact</li>
+      <li>Cliquez sur "Search key"</li>
+    </ul>
+
+    <p><img src="/help/assets/5ef8bdf2afa7bf6c81c5255dcda6a6b625d108d9/GKA_SearchKey_normal.png" /></p>
+
+    <p>Si une clé publique existe pour les termes de la recherche, vous devriez voir quelque chose comme ça:</p>
+
+    <p><img src="/help/assets/908e3314cc17729f1123972cfc51eea638f07566/GKA_FoundKeyListing_normal.png" /></p>
+
+    <p>Sélectionnez la clé que vous souhaitez importer en cliquant sur les cases à cocher puis validez en cliquant sur "Retrieve key". Ensuite démarrez l'application Mail.app et écrivez votre permier mail chiffré à votre contact comme vous l'avez appris en lisant la rubrique <a href="#firstmail">Votre premier courriel chiffré</a>.</p>
+  </div>
+
+  <h2><a href="#whybother" id="whybother" class="anchor" name="whybother"></a>Au fond, pourquoi s'embêter ?</h2>
+
+  <p>Premièrement, envoyer un courriel chiffré et signé n'est pas plus difficile que d'envoyer un message non sécurisé, une fois le concept compris.</p>
+
+  <p>Deuxièmement, envoyer un message chiffré empêchera les agences de renseignement (type NSA (USA), ANSSI (France), GCHQ (Royaume-Uni)...) ainsi que les gouvernements pratiquant l'écoute de leurs citoyens (Corée du Nord, Arabie Saoudite, Iran, Chine, USA...) d'intercepter et lire vos communications écrites.</p>
+
+  <p>Troisièmement, et cela peut ne pas sembler clair: Pourquoi devrait-on signer nos messages ? Vous pouvez comparer la signature électronique de message à l'envoi d'une enveloppe scellée dans la vraie vie.</p>
+  <p>D'une part, le destinataire est en mesure de constater si le seau a été brisé. Si quelqu'un a altéré le message en cours de route, le destinataire constatera immédiatement que la signature est invalide.</p>
+  <p>D'autre part, le destinataire peut s'assurer que le message a bien été envoyé par l'émetteur légitime et non un usurpateur puisque il peut vérifier la signature du message à l'aide de sa clé privée.</p>
+  <p>Pour ces raison, il est EXTRÊMEMENT IMPORTANT de bien conserver sa clé privée ainsi que la phrase de passe qui la protège. Un vol de clé privée comporte un fort risque usurpation d'identité, en plus de laisser la possibilité à l'attaquant de déchiffrer l'ensemble des courriel chiffré avec cette clé.</p>
+
+  <p><strong>Utilisez GPGTools - Parce que protéger ceux que vous aimez en vaut la peine.</strong></p>
+  <hr>
+
+  <h3>Plus d'infos</h3>
+  <ul>
+    <li><a href="https://gpgtools.tenderapp.com/kb/how-to/watch-screencast">Visionnez les screencasts (en)</a></li>
+    <li><a href="https://gpgtools.tenderapp.com/kb/faq/passphrase-management">Renseignez-vous sur la gestion des phrases de passe (en)</a></li>
+    <li><a href="https://gpgtools.tenderapp.com/kb/gpg-keychain-faq/backup-or-transfer-your-keys">Apprenez à sauvegarder vos clés (en)</a></li>
+    <li><a href="https://gpgtools.tenderapp.com/kb/gpg-keychain-faq/backup-or-transfer-your-keys#transfer-keys-to-another-machine">Transférez vos clés sur un autre ordinateur</a></li>
+    <li><a href="https://gpgtools.tenderapp.com/kb/how-to/add-userids-or-associate-different-email-addresses-with-an-existing-key">Ajouter d'autre adresse courriel à votre clé</a></li>
+  </ul>
+</div>
